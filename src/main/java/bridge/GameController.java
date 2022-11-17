@@ -14,6 +14,8 @@ public class GameController {
     public String inputBridgeLength() {
         OutputView.printBridgeLengthMessage();
         String inputLength = InputView.readBridgeSize();
+        Validation.validateNumber(inputLength);
+        Validation.validateNumberThreeToTwenty(inputLength);
         return inputLength;
     }
 }
