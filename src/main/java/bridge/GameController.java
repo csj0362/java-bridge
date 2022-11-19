@@ -1,5 +1,6 @@
 package bridge;
 
+import bridge.domain.BridgeMaker;
 import bridge.domain.BridgeNumberGenerator;
 import bridge.validator.Validation;
 import bridge.view.InputView;
@@ -12,6 +13,7 @@ public class GameController {
         OutputView.printStartGameMessage();
         inputBridgeLength();
         createRandomNumber();
+        inputMoving();
     }
 
     public String inputBridgeLength() {
@@ -22,6 +24,12 @@ public class GameController {
         return inputLength;
     }
 
+    public String inputMoving() {
+        OutputView.printInputToMoveMessage();
+        String inputMove = InputView.readMoving();
+        Validation.validateMoving(inputMove);
+        return inputMove;
+    }
     public int createRandomNumber() {
         return bridgeNumberGenerator.generate();
     }

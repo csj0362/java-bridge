@@ -19,4 +19,10 @@ public class Validation {
             throw new IllegalArgumentException("[ERROR] 입력된 숫자가 20보다 큽니다.");
         }
     }
+
+    public static void validateMoving(String move) {
+        if (!move.equals("U") && !move.equals("D")) {
+            throw new IllegalArgumentException("[ERROR] 입력된 문자가 대문자 U 또는 대문자 D가 아닙니다.");
+        }
+    }
 }
